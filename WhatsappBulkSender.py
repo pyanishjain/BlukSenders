@@ -34,6 +34,7 @@ try:
     import shutil
     import os
     import sys
+    import uuid
     # from bot_function import *
 
     # For Api calls Begins
@@ -45,13 +46,14 @@ try:
 
     # base_url = "http://127.0.0.1:8000/"
     # base_url = "http://minerv100.herokuapp.com/"
-    # base_url = 'http://165.232.178.222/'
+    #base_url = 'http://165.232.178.222/'
     base_url = "http://botslicense.pythonanywhere.com/"
 
 
     def getIpAddress():
-        hostname = socket.gethostname()
-        ip_address = socket.gethostbyname(hostname)
+        # hostname = socket.gethostname()
+        # ip_address = socket.gethostbyname(hostname)
+        ip_address = str(hex(uuid.getnode()))
         return ip_address
 
 
@@ -193,22 +195,22 @@ try:
     bhejna = False
     unique = ""
     message = ""
-    chrome_path = r"C:\Users\ANISH JAIN\Music\chromedriver.exe"
+    chrome_path = "D:\drivers\chromedriver.exe"
 
-    delay = 15
-
-    # clipbtn='//*[@id="main"]/footer/div[1]/div[1]/div[2]/div/div/span'
-    clipbtn = '//div[@title = "Attach"]'
-    # media_send_btn='//*[@id="app"]/div/div/div[2]/div[2]/span/div/span/div/div/div[2]/span/div/div/span'
-    media_send_btn = '//span[@data-icon="send"]'
-    # file_send_btn='//*[@id="app"]/div/div/div[2]/div[2]/span/div/span/div/div/div[2]/span/div/div'
-    file_send_btn = '//span[@data-icon="send"]'
-    search_boxji = "_2MwRD"
-    main_search_box = "_2_1wd"
-    group_member_extractor = "YmixP"
-    input_media = '//input[@accept="image/*,video/mp4,video/3gpp,video/quicktime"]'
-    input_files = '//input[@accept="*"]'
-    main_send_button = '_1E0Oz'
+    # delay = 15
+    #
+    # # clipbtn='//*[@id="main"]/footer/div[1]/div[1]/div[2]/div/div/span'
+    # clipbtn = '//div[@title = "Attach"]'
+    # # media_send_btn='//*[@id="app"]/div/div/div[2]/div[2]/span/div/span/div/div/div[2]/span/div/div/span'
+    # media_send_btn = '//span[@data-icon="send"]'
+    # # file_send_btn='//*[@id="app"]/div/div/div[2]/div[2]/span/div/span/div/div/div[2]/span/div/div'
+    # file_send_btn = '//span[@data-icon="send"]'
+    # search_boxji = "_2MwRD"
+    # main_search_box = "_2_1wd"
+    # group_member_extractor = "YmixP"
+    # input_media = '//input[@accept="image/*,video/mp4,video/3gpp,video/quicktime"]'
+    # input_files = '//input[@accept="*"]'
+    # main_send_button = '_1E0Oz'
 
     # CALL THE API VARIABLE
     variable = getVariable('whatsapp')
@@ -283,7 +285,7 @@ try:
                                            "")
             self.token_click.setObjectName("token_click")
             self.token_show = QtWidgets.QLabel(self.centralwidget)
-            self.token_show.setGeometry(QtCore.QRect(5, 39, 700, 31))
+            self.token_show.setGeometry(QtCore.QRect(5, 39, 760, 31))
             font = QtGui.QFont()
             font.setPointSize(12)
             font.setBold(True)
@@ -688,10 +690,10 @@ try:
                     chrome_options.add_argument('--ignore-ssl-errors')
 
                     # Anish Chrome Path Fix
-                    # self.browser = webdriver.Chrome(self.resource_path(
-                    # './driver/chromedriver.exe'), options=chrome_options)
-                    self.browser = webdriver.Chrome(
-                        executable_path=chrome_path, options=chrome_options)
+                    self.browser = webdriver.Chrome(self.resource_path(
+                    './driver/chromedriver.exe'), options=chrome_options)
+                    # self.browser = webdriver.Chrome(
+                        # executable_path=chrome_path, options=chrome_options)
                     self.browser.get('https://web.whatsapp.com/')
                     try:
 
@@ -1034,7 +1036,7 @@ try:
             item = QtWidgets.QTableWidgetItem()
             self.tableWidget.setHorizontalHeaderItem(1, item)
             self.total_msg = QtWidgets.QLabel(self.centralwidget)
-            self.total_msg.setGeometry(QtCore.QRect(800, 350, 301, 31))
+            self.total_msg.setGeometry(QtCore.QRect(800, 350, 411, 31))
             font = QtGui.QFont()
             font.setPointSize(12)
             self.total_msg.setFont(font)
@@ -1495,10 +1497,10 @@ try:
             return os.path.join(base_path, relative_path)
 
         def whatsapp_login(self):
-            # global chrome_path
+
             #             print(len(total))
             #             print(unique)
-            print("!@#$%^&*()*&#@!#$&*(#@!~@#$&*(&#@!~@#$&", chrome_path)
+
             try:
 
                 if unique == "first":
@@ -1509,10 +1511,10 @@ try:
                     chrome_options.add_argument('--ignore-certificate-errors')
                     chrome_options.add_argument('--ignore-ssl-errors')
                     # Anish Chrome Path fix
-                    # self.browser = webdriver.Chrome(self.resource_path(
-                    # './driver/chromedriver.exe'), options=chrome_options)
-                    self.browser = webdriver.Chrome(
-                        executable_path=chrome_path, options=chrome_options)
+                    self.browser = webdriver.Chrome(self.resource_path(
+                    './driver/chromedriver.exe'), options=chrome_options)
+                    # self.browser = webdriver.Chrome(
+                    #     executable_path=chrome_path, options=chrome_options)
 
                 elif unique == "second":
                     # print("The login value is second")
@@ -1525,10 +1527,10 @@ try:
                     chrome_options.add_argument('--ignore-ssl-errors')
 
                     # Anish Chrome Path fix
-                    # self.browser = webdriver.Chrome(self.resource_path(
-                    #     './driver/chromedriver.exe'), options=chrome_options)
-                    self.browser = webdriver.Chrome(
-                        executable_path=chrome_path, options=chrome_options)
+                    self.browser = webdriver.Chrome(self.resource_path(
+                        './driver/chromedriver.exe'), options=chrome_options)
+                    # self.browser = webdriver.Chrome(
+                    #     executable_path=chrome_path, options=chrome_options)
 
                 elif unique == "third":
                     # print("The login value is third")
@@ -1540,10 +1542,10 @@ try:
                     chrome_options.add_argument('--ignore-ssl-errors')
 
                     # Anish Chrome Path fix
-                    # self.browser = webdriver.Chrome(self.resource_path(
-                    #     './driver/chromedriver.exe'), options=chrome_options)
-                    self.browser = webdriver.Chrome(
-                        executable_path=chrome_path, options=chrome_options)
+                    self.browser = webdriver.Chrome(self.resource_path(
+                        './driver/chromedriver.exe'), options=chrome_options)
+                    # self.browser = webdriver.Chrome(
+                    #     executable_path=chrome_path, options=chrome_options)
                 else:
                     print("I am getting executed")
                     # chrome_path = "D:\drivers\chromedriver.exe"
@@ -1553,11 +1555,11 @@ try:
                     chrome_options.add_argument('--ignore-ssl-errors')
 
                     # Anish Chrome Path fix
-                    # self.browser = webdriver.Chrome(self.resource_path(
-                    #     './driver/chromedriver.exe'), options=chrome_options)
+                    self.browser = webdriver.Chrome(self.resource_path(
+                        './driver/chromedriver.exe'), options=chrome_options)
 
-                    self.browser = webdriver.Chrome(
-                        executable_path=chrome_path, options=chrome_options)
+                    # self.browser = webdriver.Chrome(
+                    #     executable_path=chrome_path, options=chrome_options)
 
                 self.browser.get('https://web.whatsapp.com/')
                 try:
@@ -1570,18 +1572,19 @@ try:
                     self.show_result.append("Not Logged In")
 
                     self.browser.quit()
-            except Exception as e:
-                print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!", e)
+            except:
+
+
                 pass
 
         def send_attachment(self):
 
-            for one_media in self.media_file:
-                sleep(2)
 
-                image_path = one_media.replace("/", "\\")
+            try:
+                for one_media in self.media_file:
+                    sleep(1)
 
-                try:
+                    image_path = one_media.replace("/", "\\")
                     clipButton = self.browser.find_element_by_xpath(clipbtn)
                     clipButton.click()
                     sleep(1)
@@ -1594,19 +1597,20 @@ try:
                         media_send_btn)
                     whatsapp_send_button.click()
                     self.show_result.append('Media sent')
-                except:
-                    self.show_result.append('Media not sent')
+            except:
+                self.show_result.append('Media not sent')
 
         def send_files(self):
 
-            for one_file in self.doc_file:
-                sleep(2)
-                try:
+
+            try:
+                for one_file in self.doc_file:
+                    sleep(1)
 
                     docPath = one_file.replace("/", "\\")
                     clipButton = self.browser.find_element_by_xpath(clipbtn)
                     clipButton.click()
-                    sleep(2)
+                    sleep(1)
                     docButton = self.browser.find_element_by_xpath(input_files)
                     docButton.send_keys(docPath)
                     sleep(3)
@@ -1615,8 +1619,8 @@ try:
                     whatsapp_send_button.click()
 
                     self.show_result.append('File sent')
-                except:
-                    self.show_result.append('File Not sent')
+            except:
+                self.show_result.append('File Not sent')
 
         def add_country_codes(self):
             code = self.country.text()
@@ -1758,7 +1762,7 @@ try:
                             break
 
                         self.whatsapp_login()
-                        sleep(5)
+                        sleep(4)
                         if re.findall('{}', msgg):
                             print(phn_num, type(phn_num))
                             for idx, p in enumerate(phn_num):
@@ -1876,11 +1880,11 @@ try:
                                     link = 'https://web.whatsapp.com/send?phone=' + p + '&text=' + url_msg
                                     # driver  = webdriver.Chrome()
                                     self.browser.get(link)
-                                    sleep(2)
+                                    sleep(4)
     #                                 print("Sending message to", p)
                                     self.show_result.append(
                                         '{}/{} => Sending message to {}.'.format((the_keeper), total_number, p))
-                                    time.sleep(3)
+
                                     self.browser.implicitly_wait(10)
                                     try:
                                         click_btn = WebDriverWait(self.browser, delay).until(
@@ -1929,7 +1933,7 @@ try:
 
                 else:
                     self.whatsapp_login()
-                    sleep(5)
+                    sleep(4)
                     if re.findall('{}', msgg):
                         for idx, p in enumerate(phn_num):
 
@@ -2014,11 +2018,11 @@ try:
                                 link = 'https://web.whatsapp.com/send?phone=' + p + '&text=' + url_msg
                                 # driver  = webdriver.Chrome()
                                 self.browser.get(link)
-                                sleep(2)
+                                sleep(4)
     #                             print("Sending message to", p)
                                 self.show_result.append(
                                     '{}/{} => Sending message to {}.'.format((idx+1), total_number, p))
-                                time.sleep(3)
+
                                 self.browser.implicitly_wait(10)
                                 try:
                                     click_btn = WebDriverWait(self.browser, delay).until(
@@ -2065,8 +2069,9 @@ try:
                             f"Total message sent out of {total_number} is {count}")
                         self.browser.quit()
 
-            except Exception as e:
-                print("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^", e)
+            except:
+                pass
+                # print("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^", e)
                 # self.browser.quit()
                 # try:
                 #     self.browser.quit()
@@ -2109,5 +2114,5 @@ try:
     getToken(path)
 
 
-except Exception as e:
-    print(e)
+except:
+    pass

@@ -1,3 +1,4 @@
 pyinstaller --noconsole --add-binary "./driver/chromedriver.exe;./driver" TelegramBulkSender.py
 
-
+how to make exe of selenium code
+- make virtualenv and install requirements 

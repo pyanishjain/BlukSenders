@@ -1,0 +1,3 @@
+pyinstaller --noconsole --add-binary "./driver/chromedriver.exe;./driver" --icon=bot1.ico --add-data "./bot1.png;." WhatsappBulkSender.py
+
+pyinstaller --noconsole --add-binary "./driver/chromedriver.exe;./driver" WhatsappBulkSender.py
